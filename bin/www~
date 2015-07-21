@@ -1,0 +1,9 @@
+#!/usr/bin/env nodejs
+var debug = require('debug')('quiz');
+var app = require('../app');
+
+app.set('port', process.env.PORT || 3000);
+console.log(app.address().port);
+var server = app.listen(3000, function() {
+  debug('Express server listening on port ' + server.address().port);
+});
